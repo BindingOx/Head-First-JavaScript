@@ -1,0 +1,14 @@
+have 3 bottles on the wall
+
+while (you have bottles on the wall) {
+    "3 bottles of beer on the wall,"
+    "3 bottles of beer,"
+    "Take one down, pass it around,"
+    bottles - 1
+    if (there are bottles left) {
+        "2 bottles of beer on the wall."
+        start song again
+    } else {
+        "No more bottles on beer on the wall!"
+    }
+}
