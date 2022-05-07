@@ -1,14 +1,36 @@
-have 3 bottles on the wall
+// have 3 bottles on the wall
 
-while (you have bottles on the wall) {
-    "3 bottles of beer on the wall,"
-    "3 bottles of beer,"
+// while (you have bottles on the wall) {
+//     "3 bottles of beer on the wall,"
+//     "3 bottles of beer,"
+//     "Take one down, pass it around,"
+//     bottles - 1
+//     if (there are bottles left) {
+//         "2 bottles of beer on the wall."
+//         start song again
+//     } else {
+//         "No more bottles on beer on the wall!"
+//     }
+// }
+
+// For non plural case
+
+// After 2, the words of the song change
+have 2 bottles on the wall
+
+while (more than one bottle?) {
+    "2 bottles of beer on the wall,"
+    "2 bottles of beer,"
     "Take one down, pass it around,"
     bottles - 1
-    if (there are bottles left) {
+    if (more than one bottle?) {
         "2 bottles of beer on the wall."
-        start song again
+        // start song again but if only one bottle left, change word to "bottle" 
     } else {
+        "1 bottle of beer on the wall!"
+        "1 bottle of beer on the wall"
+        "1 bottle of beer"
+        "Take one down, pass it around,"
         "No more bottles on beer on the wall!"
     }
 }

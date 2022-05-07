@@ -24,21 +24,26 @@
 		</script> -->
 
 		<!-- Assignment: There’s still a little flaw in our code. It runs correctly, but the output isn’t 100% perfect. See if you can find the flaw, and fix it. -->
-
-		<!--* Solution: My guess is that one bottle isn't plural -->
-
+		<!-- DONE: "1 bottles" is grammatically incorrect -->
+		<!-- DONE: missing the line "1 bottle of beer on the wall" -->
+		<!--* I just want to change bottles to bottle when count = 1 -->
 		<script>
 			var word = 'bottles';
-			var count = 99;
-			while (count > 0) {
-				console.log(count + ' ' + word + ' of beer on the wall');
+			var count = 3;
+			while (count > 1) {
+				console.log(count + ' ' + word + ' of beer on the wall,');
 				console.log(count + ' ' + word + ' of beer,');
 				console.log('Take one down, pass it around,');
 				count = count - 1;
-				if (count > 0) {
+				if (count > 1) {
 					console.log(count + ' ' + word + ' of beer on the wall.');
 				} else {
-					console.log('No more ' + word + ' of beer on the wall.');
+					var word = 'bottle';
+					console.log(count + ' ' + word + ' of beer on the wall.'); //Had to finish the last sentence before starting a new verse
+					console.log(count + ' ' + word + ' of beer on the wall,');
+					console.log(count + ' ' + word + ' of beer,');
+					console.log('Take one down, pass it around,');
+					console.log('No more bottles of beer on the wall.');
 				}
 			}
 		</script>
