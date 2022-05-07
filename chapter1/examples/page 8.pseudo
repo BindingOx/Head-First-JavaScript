@@ -1,0 +1,27 @@
+price=28.99
+discount=10
+total=price-(price*(discount/100))
+
+// if statement
+if (total > 25) do
+    freeShipping
+end
+
+// while statement
+count=10
+while (count>0) do
+    juggle
+    count=count-1
+end
+
+// if-else statement
+dog=(name="Rover" and weight=35)
+if (dog.weight>30) {
+    alert="WOOF WOOF"
+} else {
+    alert="woof woof"
+    
+}
+
+circleRadius=20
+circleArea = Math.PI * (circleRadius * circleRadius)
