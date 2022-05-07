@@ -1,0 +1,23 @@
+{
+  "name": "head-first-javascript",
+  "version": "1.0.0",
+  "description": "Code for Head First JavaScript Programming, by Elisabeth Robson and Eric Freeman. Published in March, 2014.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BindingOx/Head-First-JavaScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BindingOx/Head-First-JavaScript/issues"
+  },
+  "homepage": "https://github.com/BindingOx/Head-First-JavaScript#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
