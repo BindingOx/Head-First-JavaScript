@@ -28,16 +28,27 @@ let isSunk = false; // keep track of whether the ship is sunk or not. set it to 
 // tellUserStats;
 
 // TODO: Step 1 - Create loop and get user guess
-// - The loop. It needs to keep looping while the ship isn’t sunk. 
+// - The loop. It needs to keep looping while the ship isn’t sunk.
 
-while (isSunk == false) {
-    guess = prompt("Ready, aim, fire! (enter a number 0-6):");
-}
-
+// while (isSunk == false) {
+// 	guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
+// }
 
 // TODO: Step 2 - Check user guess
 // - Get the guess from the user and validate it.
 // - Make sure it really is a number between 0 and 6
+// - Update the guesses variable
+
+while (isSunk == false) {
+	guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
+
+	if (guess >= 0 && guess <= 6) {
+		//step 2
+		guesses = guesses + 1;
+	} else {
+		alert('Please enter a valid cell number!');
+	}
+}
 
 // TODO: Step 3 - Check if ship has sunk
 // - Write the logic to check for a hit on a ship and see if the ship is sunk.

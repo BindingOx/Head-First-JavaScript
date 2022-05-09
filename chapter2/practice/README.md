@@ -57,10 +57,28 @@ When hits=3, isSunk should be true
 
 - The loop. It needs to keep looping while the ship isn’t sunk.
 
+```js
+while (isSunk == false) {
+	guess = prompt('Ready, aim, fire! (enter a number 0-6):');
+}
+```
+
 ### Step 2 - Check user guess
 
 - Get the guess from the user and validate it.
 - Make sure it really is a number between 0 and 6
+- update the guesses variable
+
+```js
+while (isSunk == false) {
+	guess = prompt('Ready, aim, fire! (enter a number 0-6):');
+	if (guess >= 0 && guess <= 6) {
+		guesses = guesses + 1;
+	} else {
+		alert('Please enter a valid cell number!');
+	}
+}
+```
 
 ### Step 3 - Check if ship has sunk
 
