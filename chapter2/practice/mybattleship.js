@@ -30,6 +30,11 @@ let isSunk = false; // keep track of whether the ship is sunk or not. set it to 
 // TODO: Step 1 - Create loop and get user guess
 // - The loop. It needs to keep looping while the ship isn’t sunk. 
 
+while (isSunk == false) {
+    guess = prompt("Ready, aim, fire! (enter a number 0-6):");
+}
+
+
 // TODO: Step 2 - Check user guess
 // - Get the guess from the user and validate it.
 // - Make sure it really is a number between 0 and 6
