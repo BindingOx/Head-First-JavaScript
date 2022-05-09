@@ -1,0 +1,19 @@
+location1
+location2
+location3
+guess //user's current guess
+hits=0
+guesses=0 //the number of guesses
+isSunk=false
+
+while (ship isn't sunk){
+getusersguess;
+compareusersinput;
+  if (invalid input?) {
+    "Please enter a valid number";
+
+// add if else statements here
+	
+   } else {
+    ADD one to guesses;
+   }
