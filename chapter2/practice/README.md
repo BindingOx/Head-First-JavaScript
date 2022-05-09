@@ -78,7 +78,31 @@ while (isSunk == false) {
 		alert('Please enter a valid cell number!');
 	}
 }
+
+// code to determine if that guess has hit the ship
+
+if (guess == location1 || guess == location2 || guess == location3) {
+	hits = hits + 1;
+}
+
+// Now combine
+
+while (isSunk == false) {
+	guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
+
+	if (guess >= 0 && guess <= 6) {
+		//step 2
+		guesses = guesses + 1;
+		if (guess == location1 || guess == location2 || guess == location3) {
+			hits = hits + 1;
+		}
+	} else {
+		alert('Please enter a valid cell number!');
+	}
+}
 ```
+
+
 
 ### Step 3 - Check if ship has sunk
 

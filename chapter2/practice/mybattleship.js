@@ -27,17 +27,36 @@ let isSunk = false; // keep track of whether the ship is sunk or not. set it to 
 // } //end loop
 // tellUserStats;
 
-// TODO: Step 1 - Create loop and get user guess
+// Step 1 - Create loop and get user guess
 // - The loop. It needs to keep looping while the ship isn’t sunk.
 
 // while (isSunk == false) {
 // 	guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
 // }
 
-// TODO: Step 2 - Check user guess
+// Step 2 - Check user guess
 // - Get the guess from the user and validate it.
 // - Make sure it really is a number between 0 and 6
 // - Update the guesses variable
+
+// while (isSunk == false) {
+// 	guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
+
+// 	if (guess >= 0 && guess <= 6) {
+// 		//step 2
+// 		guesses = guesses + 1;
+// 	} else {
+// 		alert('Please enter a valid cell number!');
+// 	}
+// }
+
+// Now write the code to determine if that guess has hit the ship
+
+// if (guess == location1 || guess == location2 || guess == location3) {
+// 	hits = hits + 1;
+// }
+
+// Now combine
 
 while (isSunk == false) {
 	guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
@@ -45,6 +64,9 @@ while (isSunk == false) {
 	if (guess >= 0 && guess <= 6) {
 		//step 2
 		guesses = guesses + 1;
+		if (guess == location1 || guess == location2 || guess == location3) {
+			hits = hits + 1;
+		}
 	} else {
 		alert('Please enter a valid cell number!');
 	}
