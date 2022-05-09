@@ -1,4 +1,7 @@
 // Pseudocode
+
+// insert variables here
+
 // while (shipIsntSunk) {
 // 	getusersguess;
 // 	if (validInput) {
@@ -7,11 +10,11 @@
 // 			hits = hits + 1;
 // 			if (shipHit3Times) {
 // 				isSunk = true;
-// 				('You sank my battleship!');
+// 				alert('You sank my battleship!');
 // 			} //end if
 // 		} //end if
 // 	} else {
-// 		prompt('Please enter a valid number');
+// 		alert('Please enter a valid number');
 // 	} //end else
 // } //end loop
 // tellUserStats;
