@@ -53,7 +53,7 @@ When hits=3, isSunk should be true
 
 ## Divide the code into 4 parts
 
-### Step 1 - Create loop and get user guess
+### Step 1 - Create a loop and get the user's guess
 
 - The loop. It needs to keep looping while the ship isn’t sunk.
 
@@ -65,8 +65,8 @@ while (isSunk == false) {
 
 ### Step 2 - Check user guess
 
-- Get the guess from the user and validate it.
-- Make sure it really is a number between 0 and 6
+- Get a guess from the user and validate it.
+- Make sure it is a number between 0 and 6
 - update the guesses and hits variable
 
 ```js
@@ -102,7 +102,7 @@ while (isSunk == false) {
 }
 ```
 
-### Step 3 - Check if ship has sunk
+### Step 3 - Check if the ship has sunk
 
 - Write the logic to check for a hit on a ship and see if the ship is sunk.
 
@@ -137,34 +137,34 @@ while (isSunk == false) {
 
 ### Intermediate Step: Code Test
 
-// Add hit and miss alerts and initialize location variables in order to test the code
+// Add hit and miss alerts and initialize location variables to test the code
 
 while (isSunk == false) {
 guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
 
     if (guess >= 0 && guess <= 6) {
-    	//step 2
-    	guesses = guesses + 1;
-    	if (guess == location1 || guess == location2 || guess == location3) {
-    		hits = hits + 1;
-    		alert('Hit!');
-    		if (hits == 3) {
-    			//step 3
-    			isSunk = true;
-    			alert('You sank my battleship!');
-    		}
-    	} else {
-    		alert('Miss!');
-    	}
+        //step 2
+        guesses = guesses + 1;
+        if (guess == location1 || guess == location2 || guess == location3) {
+            hits = hits + 1;
+            alert('Hit!');
+            if (hits == 3) {
+                //step 3
+                isSunk = true;
+                alert('You sank my battleship!');
+            }
+        } else {
+            alert('Miss!');
+        }
     } else {
-    	alert('Please enter a valid cell number!');
+        alert('Please enter a valid cell number!');
     }
 
 }
 
-### Step 4 - Display states to user
+### Step 4 - Display states to the user
 
-- Create a little report for the user with the number of guesses it took to sink the ship.
+- Create a short report for the user with the number of guesses it took to sink the ship.
 
 ```js
 let stats =
@@ -172,12 +172,14 @@ let stats =
 	guesses +
 	' guesses to sink the battleship, ' +
 	'which means your shooting accuracy was ' +
-	3 / guesses; //step 4 - display stats at end of game
+	3 / guesses; //step 4 - display stats at the end of the game
 
 alert(stats);
+```
 
-//combined:
+## Final code
 
+```js
 while (isSunk == false && guess !== null) {
 	//add cancel option
 	guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
@@ -207,7 +209,13 @@ let stats =
 	guesses +
 	' guesses to sink the battleship, ' +
 	'which means your shooting accuracy was ' +
-	3 / guesses; //step 4 - display stats at end of game
+	3 / guesses; //step 4 - display stats at the end of the game
 
 alert(stats);
 ```
+
+![Image](battleship-game-final-flow.png 'icon')
+
+## Issues
+
+The current code doesn't allow for unique guesses so the user can get an easy win by just inputting a hit 3 times.
