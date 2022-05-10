@@ -125,7 +125,8 @@ let stats =
 
 // FIXME: guesses aren't counting up. It says "You took 0 guesses to sink the battleship, which means your shooting accuracy was Infinity"
 
-while (isSunk == false) {
+while (isSunk == false && guess !== null) {
+	//can cancel
 	guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
 
 	if (guess >= 0 && guess <= 6) {
