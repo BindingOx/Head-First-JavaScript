@@ -1,14 +1,14 @@
-// Pseudocode
-
 // hold the location of each cell of the ship
-let location1;
-let location2;
-let location3;
+let location1 = 3;
+let location2 = 4;
+let location3 = 5;
 
 let guess; // hold the users guess
 let hits = 0; // hold the number of hits and set to 0
 let guesses = 0; // hold the number of guesses and set to 0
 let isSunk = false; // keep track of whether the ship is sunk or not. set it to false. it becomes true when ship is sunk.
+
+// Pseudocode
 
 // while (shipIsntSunk) {
 // 	getusersguess;
@@ -80,7 +80,8 @@ let isSunk = false; // keep track of whether the ship is sunk or not. set it to 
 // 	alert('You sank my battleship!');
 // }
 
-// combine
+// Intermediate step  - test code
+// combine with hit and miss alerts and initialize location variables in order to test the code
 
 while (isSunk == false) {
 	guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
@@ -90,17 +91,21 @@ while (isSunk == false) {
 		guesses = guesses + 1;
 		if (guess == location1 || guess == location2 || guess == location3) {
 			hits = hits + 1;
-
+			alert('Hit!');
 			if (hits == 3) {
 				//step 3
 				isSunk = true;
 				alert('You sank my battleship!');
 			}
+		} else {
+			alert('Miss!');
 		}
 	} else {
 		alert('Please enter a valid cell number!');
 	}
 }
+
+//! Hit amd Miss prompts work but user can just keep inputting the same answer
 
 // TODO: Step 4 - Display states to user
 // - Create a little report for the user with the number of guesses it took to sink the ship.
