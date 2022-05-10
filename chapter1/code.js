@@ -1,11 +1,27 @@
 scoops = 5;
 while (scoops > 0) {
-	document.write('Another scoop!<br>');
+	console.log('Another scoop!');
 	if (scoops < 3) {
-		alert('Ice cream is running low!');
+		console.log('Ice cream is running low!');
 	} else if (scoops >= 5) {
-		alert('Eat faster, the ice cream is going to melt!');
+		console.log('Eat faster, the ice cream is going to melt!');
 	}
 	scoops = scoops - 1;
 }
-document.write("Life without ice cream isn't the same");
+console.log("Life without ice cream isn't the same");
+
+// 5
+// "Another scoop!"
+// "Eat faster, the ice cream is going to melt!"
+// 4
+// "Another scoop!"
+// 3
+// "Another scoop!"
+// 2
+// "Another scoop!"
+// 'Ice cream is running low!'
+// 1
+// "Another scoop!"
+// 'Ice cream is running low!'
+// 0
+// "Life without ice cream isn't the same"
