@@ -8,13 +8,6 @@ let hits = 0; // hold the number of hits and set to 0
 let guesses = 0; // hold the number of guesses and set to 0
 let isSunk = false; // keep track of whether the ship is sunk or not. set it to false. it becomes true when ship is sunk.
 
-let stats =
-	'You took ' +
-	guesses +
-	' guesses to sink the battleship, ' +
-	'which means your shooting accuracy was ' +
-	3 / guesses; //display stats at end of game
-
 // Pseudocode
 
 // while (shipIsntSunk) {
@@ -114,7 +107,7 @@ let stats =
 
 //! Hit amd Miss prompts work but user can just keep inputting the same answer
 
-// TODO: Step 4 - Display states to user
+// Step 4 - Display states to user
 // - Create a little report for the user with the number of guesses it took to sink the ship.
 
 // let stats = "You took " + guesses + "guesses to sink the battleship, " +
@@ -123,15 +116,17 @@ let stats =
 
 // combined:
 
-// FIXME: guesses aren't counting up. It says "You took 0 guesses to sink the battleship, which means your shooting accuracy was Infinity"
+// FIXED: guesses aren't counting up. It says "You took 0 guesses to sink the battleship, which means your shooting accuracy was Infinity"
+// At multiple breakpoints (before miss alert, hit alert, and win condition) even though guesses are counting normally, stats always displays this message. I learned that where you declare the variable matters, and the stats code is executing before the game even starts. I never told stats to change, I told guesses to increase, so it changes but when I declared stats in the beginning, it remains static.
 
 while (isSunk == false && guess !== null) {
-	//can cancel
+	//add cancel option
 	guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
 
 	if (guess >= 0 && guess <= 6) {
 		//step 2
-		guesses = guesses + 1;
+		guesses++;
+
 		if (guess == location1 || guess == location2 || guess == location3) {
 			hits = hits + 1;
 			alert('Hit!');
@@ -139,6 +134,7 @@ while (isSunk == false && guess !== null) {
 				//step 3
 				isSunk = true;
 				alert('You sank my battleship!');
+				console.table(guesses);
 			}
 		} else {
 			alert('Miss!');
@@ -147,4 +143,11 @@ while (isSunk == false && guess !== null) {
 		alert('Please enter a valid cell number!');
 	}
 }
-alert(stats); //step 4
+let stats =
+	'You took ' +
+	guesses +
+	' guesses to sink the battleship, ' +
+	'which means your shooting accuracy was ' +
+	3 / guesses; //step 4 - display stats at end of game
+
+alert(stats);

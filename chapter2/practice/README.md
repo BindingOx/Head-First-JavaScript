@@ -112,7 +112,6 @@ if (hits == 3) {
 	alert('You sank my battleship!');
 }
 
-
 // Now combine
 
 while (isSunk == false) {
@@ -141,11 +140,52 @@ while (isSunk == false) {
 // Add hit and miss alerts and initialize location variables in order to test the code
 
 while (isSunk == false) {
+guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
+
+    if (guess >= 0 && guess <= 6) {
+    	//step 2
+    	guesses = guesses + 1;
+    	if (guess == location1 || guess == location2 || guess == location3) {
+    		hits = hits + 1;
+    		alert('Hit!');
+    		if (hits == 3) {
+    			//step 3
+    			isSunk = true;
+    			alert('You sank my battleship!');
+    		}
+    	} else {
+    		alert('Miss!');
+    	}
+    } else {
+    	alert('Please enter a valid cell number!');
+    }
+
+}
+
+### Step 4 - Display states to user
+
+- Create a little report for the user with the number of guesses it took to sink the ship.
+
+```js
+let stats =
+	'You took ' +
+	guesses +
+	' guesses to sink the battleship, ' +
+	'which means your shooting accuracy was ' +
+	3 / guesses; //step 4 - display stats at end of game
+
+alert(stats);
+
+//combined:
+
+while (isSunk == false && guess !== null) {
+	//add cancel option
 	guess = prompt('Ready, aim, fire! (enter a number 0-6):'); //step 1
 
 	if (guess >= 0 && guess <= 6) {
 		//step 2
-		guesses = guesses + 1;
+		guesses++;
+
 		if (guess == location1 || guess == location2 || guess == location3) {
 			hits = hits + 1;
 			alert('Hit!');
@@ -153,6 +193,7 @@ while (isSunk == false) {
 				//step 3
 				isSunk = true;
 				alert('You sank my battleship!');
+				console.table(guesses);
 			}
 		} else {
 			alert('Miss!');
@@ -161,7 +202,12 @@ while (isSunk == false) {
 		alert('Please enter a valid cell number!');
 	}
 }
+let stats =
+	'You took ' +
+	guesses +
+	' guesses to sink the battleship, ' +
+	'which means your shooting accuracy was ' +
+	3 / guesses; //step 4 - display stats at end of game
 
-### Step 4 - Display states to user
-
-- Create a little report for the user with the number of guesses it took to sink the ship.
+alert(stats);
+```
